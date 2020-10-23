@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "covid-19tracker2020",
+    "covid": "covid-19tracker2020"
+  }
+}

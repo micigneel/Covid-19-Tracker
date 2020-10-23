@@ -1,0 +1,58 @@
+
+<section class="mt-3 mb-1">
+  <div class="row">
+    <h2 class="col-md-6">
+      <span class="text-light"> COVID-19</span><span class="text-secondary"> Tracker </span>
+      <span><i class="fas fa-street-view text-danger"></i></span>
+      </h2>
+    <div class="col-md-5 offset-md-1">
+      <div class="form-group ml-4 hide-scroll">
+        <select name="country"
+                id="countryId"
+                class="form-control form-control-md bg-secondary text-light border border-dark"
+                #cntry
+                (change)="changeCountry(cntry.value)">
+            <option value="ALL">Worldwide</option>
+            <option *ngFor= "let country of countries" [value]="country.iso2">
+                {{ country.country }}
+            </option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+
+</section>
+
+<section>
+  <div class="row">
+     <div class="col-md-4 mb-2 px-1 " *ngFor="let category of categories">
+          <a (click) = "change(category.type)">
+            <div class="card bg-dark text-light border border-secondary card-merge" >
+
+              <div class="card-header pb-1 text-center h5 border-bottom border-secondary"
+                [ngClass]="category.type == selectedCategory ? selectedCategory == 'recovered' ? 'bg-success': selectedCategory == 'cases'? 'bg-info':'bg-danger' : 'bg-secondary'"
+                >
+                    {{  category.name  }}
+              </div>
+
+                <div class="card-body pb-1 pt-1">
+                    <div class="card-title text-center m-0 p-0"
+                    [ngClass]="category.type == 'recovered' ? 'text-success': category.type == 'cases' ? 'text-info' : category.type == 'death' ? 'text-danger':'text-secondary'"
+                    >
+                    <b> Today   +{{ category.todayCase }}</b>
+                    </div>
+                    <div class="text-muted p-0">
+                      <b>{{ category.totalCase }} Total</b>
+                    </div>
+                </div>
+
+            </div>
+          </a>
+     </div>
+  </div>
+</section>
+
+<section>
+  <app-leaflet-map></app-leaflet-map>
+</section>

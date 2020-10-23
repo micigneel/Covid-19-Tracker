@@ -1,0 +1,23 @@
+.table-responsive {
+  max-height:335px;
+
+}
+
+::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just make scrollbar invisible */
+}
+
+.table-merge {
+  opacity: 0.95;
+}
+
+
+table th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: #6C757D;
+}
+
+

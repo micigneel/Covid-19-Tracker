@@ -1,1 +1,28 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~leaflet/dist/leaflet.css";
+
+body {
+  background: #333;
+  color: #fff;
+}
+
+#home-section {
+  background: url('assets/img/Logo.PNG');
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  background-attachment: fixed;
+  min-height: 700px;
+
+}
+
+#home-section .dark-overlay{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 700px;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+#home-section .content-inner {
+  padding-top: 70px;
+}
